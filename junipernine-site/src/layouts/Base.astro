@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  current?: string;
+}
+
+const { title, description = 'Independent IT consultancy and bespoke software.', current = '' } = Astro.props;
+
+const nav = [
+  { href: '/services/', label: 'Services', key: 'services' },
+  { href: '/apps/', label: 'Apps', key: 'apps' },
+  { href: '/blog/', label: 'Blog', key: 'blog' },
+  { href: '/contact/', label: 'Contact', key: 'contact' },
+];
+---
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title} | junipernine</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-row">
+        <a class="brand" href="/">junipernine</a>
+        <nav aria-label="Main">
+          <ul>
+            {nav.map((item) => (
+              <li>
+                <a href={item.href} aria-current={current === item.key ? 'page' : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <span>you@junipernine.com</span>
+        <a href="https://github.com/junipernineaj">GitHub</a>
+      </div>
+    </footer>
+  </body>
+</html>

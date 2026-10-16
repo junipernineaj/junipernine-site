@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+
+const services = [
+  {
+    href: '/services/incident-management/',
+    title: 'Incident management',
+    summary: 'Clear response processes and post-incident reviews that stop outages repeating.',
+  },
+  {
+    href: '/services/operational-readiness/',
+    title: 'Operational readiness',
+    summary: 'Runbooks, monitoring and risk review before a service goes live.',
+  },
+  {
+    href: '/services/cloud-cost-optimisation/',
+    title: 'Cloud cost optimisation',
+    summary: 'Find the waste, remove it, and set the controls to keep it down.',
+  },
+  {
+    href: '/services/observability/',
+    title: 'Observability',
+    summary: 'Logs, metrics and traces you can act on, with the noise cut down.',
+  },
+  {
+    href: '/services/bespoke-applications/',
+    title: 'Bespoke applications',
+    summary: 'Custom tools for operations and personal workflows, built to be maintained.',
+  },
+];
+---
+<Base title="Home" current="">
+  <section class="hero">
+    <h1>Reliable operations, built to last.</h1>
+    <p>
+      Independent IT consultancy for teams that need their systems to run well and their incidents to
+      stop repeating. I work across incident management, operational readiness, cloud costs,
+      observability and bespoke software.
+    </p>
+    <a class="button" href="/services/">See my services</a>
+  </section>
+
+  <div class="service-grid">
+    {services.map((s) => (
+      <div>
+        <h3><a href={s.href}>{s.title}</a></h3>
+        <p>{s.summary}</p>
+      </div>
+    ))}
+  </div>
+</Base>
