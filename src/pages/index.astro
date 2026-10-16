@@ -1,51 +1,62 @@
 ---
 import Base from '../layouts/Base.astro';
 
-const services = [
+const supporting = [
   {
     href: '/services/incident-management/',
     title: 'Incident management',
-    summary: 'Clear response processes and post-incident reviews that stop outages repeating.',
+    summary: 'Response processes and reviews that stop the same outage happening twice.',
   },
   {
     href: '/services/operational-readiness/',
     title: 'Operational readiness',
-    summary: 'Runbooks, monitoring and risk review before a service goes live.',
+    summary: 'Checking a service can be run safely before it goes live, and handed over cleanly.',
   },
   {
     href: '/services/cloud-cost-optimisation/',
     title: 'Cloud cost optimisation',
-    summary: 'Find the waste, remove it, and set the controls to keep it down.',
+    summary: 'Finding the waste in a cloud bill and setting the controls that keep it down.',
   },
   {
     href: '/services/observability/',
     title: 'Observability',
-    summary: 'Logs, metrics and traces you can act on, with the noise cut down.',
-  },
-  {
-    href: '/services/bespoke-applications/',
-    title: 'Bespoke applications',
-    summary: 'Custom tools for operations and personal workflows, built to be maintained.',
+    summary: 'Logs, metrics and alerts that tell you something useful, with the noise removed.',
   },
 ];
 ---
 <Base title="Home" current="">
   <section class="hero">
-    <h1>Reliable operations, built to last.</h1>
+    <h1>Bespoke software, built by someone who has run the systems it supports.</h1>
     <p>
-      Independent IT consultancy for teams that need their systems to run well and their incidents to
-      stop repeating. I work across incident management, operational readiness, cloud costs,
-      observability and bespoke software.
+      I build custom applications for teams that need tools shaped around how they actually work.
+      The work draws on years of running incident response, operational readiness and cloud platforms,
+      so what I build is designed to be run, measured and maintained, not just handed over.
     </p>
-    <a class="button" href="/services/">See my services</a>
+    <a class="button" href="/contact/">Describe your project</a>
   </section>
 
-  <div class="service-grid">
-    {services.map((s) => (
-      <div>
-        <h3><a href={s.href}>{s.title}</a></h3>
-        <p>{s.summary}</p>
-      </div>
-    ))}
-  </div>
+  <section class="home-section">
+    <h2>What I build</h2>
+    <p>
+      Tools for operations teams and personal workflows, built to be understood and changed by the
+      people who use them. See the <a href="/services/bespoke-applications/">bespoke applications</a>
+      page for how the process works, and the <a href="/apps/">apps</a> page for examples.
+    </p>
+  </section>
+
+  <section class="home-section">
+    <h2>How I help beyond the build</h2>
+    <p>
+      Alongside the software, I offer consultancy in the operational areas that shape how it should
+      be built and run. Each can also be booked on its own.
+    </p>
+    <div class="service-grid">
+      {supporting.map((s) => (
+        <div>
+          <h3><a href={s.href}>{s.title}</a></h3>
+          <p>{s.summary}</p>
+        </div>
+      ))}
+    </div>
+  </section>
 </Base>
