@@ -97,8 +97,14 @@ p {
 }
 
 .brand img {
-  height: 2.25rem;
+  height: 4.5rem;
   width: auto;
+}
+
+@media (max-width: 40rem) {
+  .brand img {
+    height: 3rem;
+  }
 }
 
 nav ul {
