@@ -1,3 +1,20 @@
+/* Jost, matching the wordmark. Self-hosted so no third-party font service is needed. */
+@font-face {
+  font-family: 'Jost';
+  src: url('/fonts/jost-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url('/fonts/jost-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Design tokens: change colours and fonts here and the whole site follows. */
 :root {
   --bg: #faf8f5;
@@ -7,8 +24,8 @@
   --brand: #7a8d8d;
   --accent: #4f6666;
   --rule: #d8d4cc;
-  --serif: 'Source Serif 4', Georgia, serif;
-  --sans: 'Inter', system-ui, sans-serif;
+  --serif: 'Jost', system-ui, sans-serif;
+  --sans: 'Jost', system-ui, sans-serif;
   --measure: 65ch;
 }
 
