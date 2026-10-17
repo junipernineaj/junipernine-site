@@ -149,7 +149,13 @@ nav a[aria-current='page'] {
 }
 
 .hero h1 {
-  max-width: 18ch;
+  max-width: none;
+}
+
+@media (min-width: 40rem) {
+  .hero h1 {
+    white-space: nowrap;
+  }
 }
 
 .button {
