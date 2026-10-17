@@ -92,11 +92,13 @@ p {
 }
 
 .brand {
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--brand);
-  text-decoration: none;
+  display: inline-block;
+  line-height: 0;
+}
+
+.brand img {
+  height: 2.25rem;
+  width: auto;
 }
 
 nav ul {
